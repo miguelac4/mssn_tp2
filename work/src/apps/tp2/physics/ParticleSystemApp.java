@@ -1,4 +1,4 @@
-package apps.tp2.physics;
+package apps.tp2.exercises;
 
 import processing.core.PApplet;
 import processing.core.PVector;

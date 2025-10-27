@@ -1,5 +1,6 @@
-package apps.tp2.physics;
+package apps.tp2.exercises;
 
+import apps.tp2.physics.CelestialBody;
 import processing.core.PApplet;
 import processing.core.PVector;
 import setup.IProcessingApp;
