@@ -1,15 +1,15 @@
-package setup;
+    package setup;
 
-import processing.core.PApplet;
+    import processing.core.PApplet;
 
-public interface IProcessingApp {
+    public interface IProcessingApp {
 
-    public void setup(PApplet p);
+        public void setup(PApplet p);
 
-    public void draw(PApplet p, float dt);
+        public void draw(PApplet p, float dt);
 
-    public void keyPressed(PApplet p);
+        public void keyPressed(PApplet p);
 
-    public void mousePressed(PApplet p);
+        public void mousePressed(PApplet p);
 
-}
+    }

@@ -1,6 +1,5 @@
-package apps.tp2.exercises;
+package apps.tp2.physics;
 
-import apps.tp2.physics.CelestialBody;
 import processing.core.PApplet;
 import processing.core.PVector;
 import setup.IProcessingApp;
@@ -12,37 +11,41 @@ import java.util.List;
 
 public class SolarSystemApp implements IProcessingApp {
     private List<ParticleSystem> pss;
+
+    // Definir todas as Massas
     private float sunMass = 1.989e30f;
     private float earthMass = 5.97e24f;
     private float mercuryMass = 0.33e24f;
     private float venusMass = 4.87e24f;
     private float marsMass = 0.642e24f;
     private float jupiterMass = 1898e24f; //1898
-//    private float saturnMass = 568e24f; //568
-//    private float uranusMass = 86.8e24f; //86
-//    private float neptuneMass = 102e24f; //102
+    private float saturnMass = 568e24f; //568
+    private float uranusMass = 86.8e24f; //86
+    private float neptuneMass = 102e24f; //102
 
+    // Definir todas as Distancias ao Sol
     private float distEarthSun = 149.6e9f;
     private float distMercurySun = 57.9e9f;
     private float distVenusSun = 108.2e9f;
     private float distMarsSun = 228e9f;
     private float distJupiterSun = 778.5e9f;
-//    private float distSaturnSun = 1432.0e9f;
-//    private float distUranusSun = 2867.0e9f;
-//    private float distNeptuneSun = 4515.0e9f;
+    private float distSaturnSun = 1432.0e9f;
+    private float distUranusSun = 2867.0e9f;
+    private float distNeptuneSun = 4515.0e9f;
 
+    // Definir todas as Velocidades
     private float earthSpeed = 2.9e4f;
     private float mercurySpeed = 4.7e4f;
     private float venusSpeed = 3.5e4f;
     private float marsSpeed = 2.41e4f;
     private float jupiterSpeed = 1.31e4f;
-//    private float saturnSpeed = 0.97e4f;
-//    private float uranusSpeed = 0.68e4f;
-//    private float neptuneSpeed = 0.54e4f;
+    private float saturnSpeed = 0.97e4f;
+    private float uranusSpeed = 0.68e4f;
+    private float neptuneSpeed = 0.54e4f;
 
 
     private float[] viewport = {0, 0, 1, 1};
-    private double[] window = {-1.2*distJupiterSun, 1.2*distJupiterSun, -1.2*distJupiterSun, 1.2*distJupiterSun};
+    private double[] window = {-6*distJupiterSun, 6*distJupiterSun, -6*distJupiterSun, 6*distJupiterSun};
 
     private SubPlot plt;
     private CelestialBody sun;
@@ -51,11 +54,11 @@ public class SolarSystemApp implements IProcessingApp {
     private CelestialBody venus;
     private CelestialBody mars;
     private CelestialBody jupiter;
-//    private CelestialBody saturn;
-//    private CelestialBody uranus;
-//    private CelestialBody neptune;
+    private CelestialBody saturn;
+    private CelestialBody uranus;
+    private CelestialBody neptune;
 
-    private float speedUp = 60 * 60 * 24 * 30 * 2;
+    private float speedUp = 60 * 60 * 24 * 30 * 5; // 5 anos - 1 segundo
     @Override
     public void setup(PApplet p) {
         plt = new SubPlot(window, viewport, p.width, p.height);
@@ -65,9 +68,9 @@ public class SolarSystemApp implements IProcessingApp {
         venus = new CelestialBody(new PVector(0, distVenusSun), new PVector(venusSpeed, 0), venusMass, distVenusSun/10, p.color(248,226,176));
         mars = new CelestialBody(new PVector(0, distMarsSun), new PVector(marsSpeed, 0), marsMass, distMarsSun/10, p.color(69,24,4));
         jupiter = new CelestialBody(new PVector(0, distJupiterSun), new PVector(jupiterSpeed, 0), jupiterMass, distJupiterSun/10, p.color(227,220,203));
-//        saturn = new CelestialBody(new PVector(0, distSaturnSun), new PVector(saturnSpeed, 0), saturnMass, distSaturnSun/10, p.color(226,191,125));
-//        uranus = new CelestialBody(new PVector(0, distUranusSun), new PVector(uranusSpeed, 0), uranusMass, distUranusSun/10, p.color(225,238,238));
-//        neptune = new CelestialBody(new PVector(0, distNeptuneSun), new PVector(neptuneSpeed, 0), neptuneMass, distNeptuneSun/10, p.color(91,93,223));
+        saturn = new CelestialBody(new PVector(0, distSaturnSun), new PVector(saturnSpeed, 0), saturnMass, distSaturnSun/10, p.color(226,191,125));
+        uranus = new CelestialBody(new PVector(0, distUranusSun), new PVector(uranusSpeed, 0), uranusMass, distUranusSun/10, p.color(225,238,238));
+        neptune = new CelestialBody(new PVector(0, distNeptuneSun), new PVector(neptuneSpeed, 0), neptuneMass, distNeptuneSun/10, p.color(91,93,223));
         pss = new ArrayList<ParticleSystem>();
     }
 
@@ -85,36 +88,36 @@ public class SolarSystemApp implements IProcessingApp {
         PVector fToVenus = sun.attraction(venus);
         PVector fToMars = sun.attraction(mars);
         PVector fToJupiter = sun.attraction(jupiter);
-//        PVector fToSaturn = sun.attraction(saturn);
-//        PVector fToUranus = sun.attraction(uranus);
-//        PVector fToNeptune = sun.attraction(neptune);
+        PVector fToSaturn = sun.attraction(saturn);
+        PVector fToUranus = sun.attraction(uranus);
+        PVector fToNeptune = sun.attraction(neptune);
 
         earth.applyForce(fToEarth);
         mercury.applyForce(fToMercury);
         venus.applyForce(fToVenus);
         mars.applyForce(fToMars);
         jupiter.applyForce(fToJupiter);
-//        saturn.applyForce(fToSaturn);
-//        uranus.applyForce(fToUranus);
-//        neptune.applyForce(fToNeptune);
+        saturn.applyForce(fToSaturn);
+        uranus.applyForce(fToUranus);
+        neptune.applyForce(fToNeptune);
 
         earth.move(dt*speedUp);
         mercury.move(dt*speedUp);
         venus.move(dt*speedUp);
         mars.move(dt*speedUp);
         jupiter.move(dt*speedUp);
-//        saturn.move(dt*speedUp);
-//        uranus.move(dt*speedUp);
-//        neptune.move(dt*speedUp);
+        saturn.move(dt*speedUp);
+        uranus.move(dt*speedUp);
+        neptune.move(dt*speedUp);
 
         earth.display(p, plt);
         mercury.display(p, plt);
         venus.display(p, plt);
         mars.display(p, plt);
         jupiter.display(p, plt);
-//        saturn.display(p, plt);
-//        uranus.display(p, plt);
-//        neptune.display(p, plt);
+        saturn.display(p, plt);
+        uranus.display(p, plt);
+        neptune.display(p, plt);
 
         Iterator<ParticleSystem> iterator = pss.iterator();
         while(iterator.hasNext()) {
