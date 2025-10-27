@@ -10,7 +10,7 @@ public class ProcessingSetup extends PApplet {
     private int lastUpdateTime;
 
     public static void main(String[] args) {
-        app = new ParticleSystemApp ();
+        app = new SolarSystemApp();
         PApplet.main(ProcessingSetup.class.getName());
     }
 
@@ -42,4 +42,5 @@ public class ProcessingSetup extends PApplet {
     public void mousePressed() {
         app.mousePressed(this);
     }
+
 }
