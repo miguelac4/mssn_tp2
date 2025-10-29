@@ -45,7 +45,15 @@ public class SolarSystemApp implements IProcessingApp {
 
 
     private float[] viewport = {0, 0, 1, 1};
-    private double[] window = {-6*distJupiterSun, 6*distJupiterSun, -6*distJupiterSun, 6*distJupiterSun};
+    /*
+    Para alterar o campo de visualização:
+        - 0.4 para aproximar e ver apenas até marte
+        - 6 para visualizar todos os planetas do sistema solar
+     */
+
+    private double changeWindow = 0.4;
+    private double[] window = {-changeWindow * distJupiterSun, changeWindow * distJupiterSun,
+            -changeWindow * distJupiterSun, changeWindow * distJupiterSun};
 
     private SubPlot plt;
     private CelestialBody sun;
@@ -58,7 +66,14 @@ public class SolarSystemApp implements IProcessingApp {
     private CelestialBody uranus;
     private CelestialBody neptune;
 
-    private float speedUp = 60 * 60 * 24 * 30 * 5; // 5 anos - 1 segundo
+    /*
+    Velocidade definida: 3 anos a cada segundo
+
+        Nota: Esta velocidade não pode ser astronomica, caso seja aumentada do valor definido irá causar
+        problemas com o integrador do metodo Euler.
+
+     */
+    private float speedUp = 60 * 60 * 24 * 30 * 3;
     @Override
     public void setup(PApplet p) {
         plt = new SubPlot(window, viewport, p.width, p.height);
@@ -83,6 +98,7 @@ public class SolarSystemApp implements IProcessingApp {
 
         sun.display(p, plt);
 
+        // Aplicar fisicas dos planetas ao sol (CelestialBody)
         PVector fToEarth = sun.attraction(earth);
         PVector fToMercury = sun.attraction(mercury);
         PVector fToVenus = sun.attraction(venus);
@@ -92,6 +108,7 @@ public class SolarSystemApp implements IProcessingApp {
         PVector fToUranus = sun.attraction(uranus);
         PVector fToNeptune = sun.attraction(neptune);
 
+        // Aplicar movimentação (Mover)
         earth.applyForce(fToEarth);
         mercury.applyForce(fToMercury);
         venus.applyForce(fToVenus);
@@ -119,6 +136,7 @@ public class SolarSystemApp implements IProcessingApp {
         uranus.display(p, plt);
         neptune.display(p, plt);
 
+        // Correr a lista de particulas e aplicar força e movimentacao
         Iterator<ParticleSystem> iterator = pss.iterator();
         while(iterator.hasNext()) {
             ParticleSystem ps = iterator.next();
@@ -141,6 +159,7 @@ public class SolarSystemApp implements IProcessingApp {
     public void mousePressed(PApplet p) {
         double[] ww = plt.getWorldCoord(p.mouseX, p.mouseY);
 
+        // Converter as coordenadas do rato do ecra para o mundo fisico
         int cor = p.color(p.random(255), p.random(130), p.random(40, 60));
         float vx = p.random(distEarthSun,distEarthSun);
         float vy = p.random(distEarthSun,distEarthSun);
