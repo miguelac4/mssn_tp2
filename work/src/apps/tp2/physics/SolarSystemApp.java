@@ -51,7 +51,7 @@ public class SolarSystemApp implements IProcessingApp {
         - 6 para visualizar todos os planetas do sistema solar
      */
 
-    private double changeWindow = 0.4;
+    private double changeWindow = 6;
     private double[] window = {-changeWindow * distJupiterSun, changeWindow * distJupiterSun,
             -changeWindow * distJupiterSun, changeWindow * distJupiterSun};
 
@@ -69,9 +69,8 @@ public class SolarSystemApp implements IProcessingApp {
     /*
     Velocidade definida: 3 anos a cada segundo
 
-        Nota: Esta velocidade não pode ser astronomica, caso seja aumentada do valor definido irá causar
-        problemas com o integrador do metodo Euler.
-
+        Nota: Esta velocidade não pode ser astronomica, caso seja aumentada do valor definido (3)
+        irá causar problemas com o integrador do metodo Euler.
      */
     private float speedUp = 60 * 60 * 24 * 30 * 3;
     @Override
