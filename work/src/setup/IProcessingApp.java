@@ -12,4 +12,5 @@
 
         public void mousePressed(PApplet p);
 
+        public void keyReleased(PApplet p);
     }

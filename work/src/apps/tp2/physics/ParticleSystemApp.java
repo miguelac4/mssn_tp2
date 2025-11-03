@@ -61,6 +61,11 @@ public class ParticleSystemApp implements IProcessingApp {
     }
 
     @Override
+    public void keyReleased(PApplet p) {
+
+    }
+
+    @Override
     public void keyPressed(PApplet p) {
 
     }
