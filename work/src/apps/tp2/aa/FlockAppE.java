@@ -63,4 +63,9 @@ public class FlockAppE implements IProcessingApp {
     public void mousePressed(PApplet app) {
 
     }
+
+    @Override
+    public void keyReleased(PApplet p) {
+
+    }
 }
