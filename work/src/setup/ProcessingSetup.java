@@ -1,6 +1,7 @@
 package setup;
 
 import apps.tp2.aa.BoidApp;
+import apps.tp2.aa.FlockAppE;
 import apps.tp2.physics.ParticleSystemApp;
 import apps.tp2.physics.SolarSystemApp;
 import processing.core.PApplet;
@@ -10,7 +11,7 @@ public class ProcessingSetup extends PApplet {
     private int lastUpdateTime;
 
     public static void main(String[] args) {
-        app = new ParticleSystemApp ();
+        app = new FlockAppE();
         PApplet.main(ProcessingSetup.class.getName());
     }
 
