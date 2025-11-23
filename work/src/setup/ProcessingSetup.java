@@ -1,7 +1,6 @@
 package setup;
 
-import apps.tp2.aa.BoidApp;
-import apps.tp2.aa.BoidWanderApp;
+import apps.tp2.aa.*;
 import apps.tp2.physics.ParticleSystemApp;
 import apps.tp2.physics.SolarSystemApp;
 import processing.core.PApplet;
@@ -11,7 +10,17 @@ public class ProcessingSetup extends PApplet {
     private int lastUpdateTime;
 
     public static void main(String[] args) {
-        app = new BoidApp();
+        /*
+
+        Definir aplicação para correr:
+        - SolarSystemApp()
+        - ParticleSystemApp()
+        - BoidApp()
+        - BoidWanderApp()
+        - FlockAppE()
+
+        */
+        app = new FlockAppE();
         PApplet.main(ProcessingSetup.class.getName());
     }
 
