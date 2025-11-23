@@ -36,7 +36,9 @@ Each video illustrates how simple physical laws and local rules can generate com
 Video showing a simplified **solar system**, where each planet is modeled as a body with mass, position and velocity, updated using Newton’s law of universal gravitation.  
 A small **particle system** (comets/fragments) is added to enrich the scene and highlight orbital motion.
 
-➡️ *YouTube:* `[insert Solar System video link here]`
+<a href="https://youtu.be/gkh3Q7ATJTs" title="Watch Solar System on YouTube">
+  <img src="media/thumb_dla.png" alt="Click the image to watch the Solar System demo" width="420">
+</a>
 
 ---
 
@@ -49,7 +51,9 @@ Video of a single **Boid** controlled by the user:
 
 The clip shows how the steering forces affect velocity and trajectory in real time.
 
-➡️ *YouTube:* `[insert Boid throttle/brake video link here]`
+<a href="https://youtu.be/gkh3Q7ATJTs" title="Watch Boid with Throttle and Brake on YouTube">
+  <img src="media/thumb_dla.png" alt="Click the image to watch the Boid with Throttle and Brake demo" width="420">
+</a>
 
 ---
 
@@ -58,7 +62,9 @@ The clip shows how the steering forces affect velocity and trajectory in real ti
 Demo of the **Reynolds Wander** behaviour.  
 The Boid follows a smoothly moving target on a virtual circle in front of it, producing an organic, unpredictable path without abrupt turns. Optional debug visuals show the wander circle and target point.
 
-➡️ *YouTube:* `[insert Wander video link here]`
+<a href="https://youtu.be/gkh3Q7ATJTs" title="Watch Wander Behaviour on YouTube">
+  <img src="media/thumb_dla.png" alt="Click the image to watch the Wander Behaviour demo" width="420">
+</a>
 
 ---
 
@@ -72,4 +78,6 @@ Video of a full **flocking system** based on Craig Reynolds’ model, including:
 
 The video illustrates the emergence of collective motion from simple local rules.
 
-➡️ *YouTube:* `[insert Flocking video link here]`
+<a href="https://youtu.be/gkh3Q7ATJTs" title="Watch Flocking on YouTube">
+  <img src="media/thumb_dla.png" alt="Click the image to watch the Flocking demo" width="420">
+</a>
