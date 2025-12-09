@@ -37,7 +37,7 @@ Video showing a simplified **solar system**, where each planet is modeled as a b
 A small **particle system** (comets/fragments) is added to enrich the scene and highlight orbital motion.
 
 <a href="https://youtu.be/gkh3Q7ATJTs" title="Watch Solar System on YouTube">
-  <img src="media/thumb_dla.png" alt="Click the image to watch the Solar System demo" width="420">
+  <img src="docs/solarsystem1.gif" alt="Click the image to watch the Solar System demo" width="420">
 </a>
 
 ---
