@@ -36,9 +36,9 @@ Each video illustrates how simple physical laws and local rules can generate com
 Video showing a simplified **solar system**, where each planet is modeled as a body with mass, position and velocity, updated using Newton’s law of universal gravitation.  
 A small **particle system** (comets/fragments) is added to enrich the scene and highlight orbital motion.
 
-<a href="https://youtu.be/gkh3Q7ATJTs" title="Watch Solar System on YouTube">
+
   <img src="docs/solarsystem1.gif" alt="Click the image to watch the Solar System demo" width="420">
-</a>
+
 
 ---
 
@@ -51,9 +51,9 @@ Video of a single **Boid** controlled by the user:
 
 The clip shows how the steering forces affect velocity and trajectory in real time.
 
-<a href="https://youtu.be/gkh3Q7ATJTs" title="Watch Boid with Throttle and Brake on YouTube">
-  <img src="media/thumb_dla.png" alt="Click the image to watch the Boid with Throttle and Brake demo" width="420">
-</a>
+
+  <img src="docs/boid2.gif" alt="Click the image to watch the Boid with Throttle and Brake demo" width="420">
+
 
 ---
 
